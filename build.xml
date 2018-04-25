@@ -32,6 +32,7 @@
   <target name="resolve" description="retrieve dependencies with ivy">
     <ivy:settings file="${user.home}/.ivy2/ivysettings.xml"/>
     <ivy:resolve transitive="false"/>
+    <ivy:report todir="."/>
     <ivy:retrieve type="jar,bundle" pattern="${basedir}/lib/[artifact]-[revision].[ext]" conf="bitrix-plugin-prod" haltonfailure="true"/>
     <ivy:retrieve type="jar,bundle" pattern="${basedir}/libdev/[artifact]-[revision].[ext]" conf="bitrix-plugin-dev" haltonfailure="true"/>
   </target>
